@@ -10,10 +10,8 @@ Author URI: www.tervosystems.com
 // Add Cutom Post Type Functionality
 /* Edit the custom-post-type.php file to add custom post types */
 
-// require_once('custom-post-type.php');  /*Uncomment this line to add custom post type */
+require_once('custom-post-type.php');  /*Uncomment this line to add custom post type */
 
-//Add Schema.org widget
-require_once('organization-schema-widget/organization-schema-widget.php');   /*Uncomment this line to add Schema.org fields widget */
 
 // Add excerpt functionality to pages
 add_action( 'init', 'my_add_excerpts_to_pages' );
