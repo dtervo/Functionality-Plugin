@@ -1,4 +1,5 @@
 
+<!-- Local Business Schema -->
 <div itemscope itemtype="http://schema.org/LocalBusiness">
 	<meta itemprop="name" content="Company Name" />
 	<meta itemprop="url" content="http://example.com" />
@@ -17,4 +18,49 @@
 	<meta itemprop="openingHours" content="Mo, Tu, We, Th, Fr 08:00-17:00" />
 	<meta itemprop="openingHours" content="Sa 08:00-17:00" />
 	<meta itemprop="openingHours" content="Su 08:00-17:00" />
+</div>
+
+<!-- Product Schema -->
+<div itemscope itemtype="http://schema.org/Product">
+    <span itemprop="name">Product Name</span>
+    <img src="link-to-image.jpg" alt='Image Name' />
+    <div itemprop="aggregateRating"
+        itemscope itemtype="http://schema.org/AggregateRating">
+       Rated <span itemprop="ratingValue">3.5</span>/5
+       based on <span itemprop="reviewCount">11</span> customer reviews
+    </div>
+
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+		<span itemprop="price">$999.99</span>
+        <link itemprop="availability" href="http://schema.org/InStock" />In stock
+    </div>
+
+    Product description:
+    <span itemprop="description">Product Description</span>
+</div>
+
+<!-- Person Schema -->
+<div itemscope itemtype="http://schema.org/Person">
+    <span itemprop="name">Jane Doe</span>
+    <img src="janedoe.jpg" itemprop="image" />
+    <span itemprop="jobTitle">Professor</span>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+		<span itemprop="streetAddress">
+        20341 Whitworth Institute
+        405 N. Whitworth
+        </span>
+		<span itemprop="addressLocality">Seattle</span>,
+        <span itemprop="addressRegion">WA</span>
+        <span itemprop="postalCode">98052</span>
+    </div>
+    <span itemprop="telephone">(425) 123-4567</span>
+    <a href="mailto:jane-doe@xyz.edu" itemprop="email">
+        jane-doe@xyz.edu</a>
+      Jane's home page:
+	<a href="http://www.janedoe.com" itemprop="url">janedoe.com</a>
+    Graduate students:
+      <a href="http://www.xyz.edu/students/alicejones.html" itemprop="colleague">
+        Alice Jones</a>
+      <a href="http://www.xyz.edu/students/bobsmith.html" itemprop="colleague">
+        Bob Smith</a>
 </div>

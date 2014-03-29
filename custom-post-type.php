@@ -4,8 +4,8 @@
 
 
 // Create the function for the Custom Post Type
-function custom_post_example() { 
-	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+function tervo_custom_post() { 
+	register_post_type( 'tervo_custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	array('labels' => array(
 			'name' => __('Custom Types', 'post type general name'), /* This is the Title of the Group */
 			'singular_name' => __('Custom Post', 'post type singular name'), /* This is the individual type */
@@ -37,14 +37,14 @@ function custom_post_example() {
 	); /* end of register post type */
 	
 	/* this ads your post categories to your custom post type */
-	register_taxonomy_for_object_type('category', 'custom_type');
+	register_taxonomy_for_object_type('category', 'tervo_custom_type');
 	/* this ads your post tags to your custom post type */
-	register_taxonomy_for_object_type('post_tag', 'custom_type');
+	register_taxonomy_for_object_type('post_tag', 'tervo_custom_type');
 	
 } 
 
 	// adding the function to the Wordpress init
-	add_action( 'init', 'custom_post_example');
+	add_action( 'init', 'tervo_custom_post');
 	
 	/*
 	for more information on taxonomies, go here:
@@ -52,8 +52,8 @@ function custom_post_example() {
 	*/
 	
 	// now let's add custom categories (these act like categories)
-    register_taxonomy( 'custom_cat', 
-    	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    register_taxonomy( 'tervo_cat', 
+    	array('tervo_custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true it acts like categories */             
     		'labels' => array(
     			'name' => __( 'Custom Categories' ), /* name of the custom taxonomy */
@@ -73,8 +73,8 @@ function custom_post_example() {
     );   
     
 	// now let's add custom tags (these act like categories)
-    register_taxonomy( 'custom_tag', 
-    	array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    register_taxonomy( 'tervo_tag', 
+    	array('tervo_custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => false,    /* if this is false, it acts like tags */                
     		'labels' => array(
     			'name' => __( 'Custom Tags' ), /* name of the custom taxonomy */
