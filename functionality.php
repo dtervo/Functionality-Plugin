@@ -7,6 +7,13 @@ License: GPL
 Author: Dan Tervo
 Author URI: www.tervosystems.com
 */
+// Add Cutom Post Type Functionality
+/* Edit the custom-post-type.php file to add custom post types */
+
+// require_once('custom-post-type.php');  /*Uncomment this line to add custom post type */
+
+//Add Schema.org widget
+require_once('organization-schema-widget/organization-schema-widget.php');   /*Uncomment this line to add Schema.org fields widget */
 
 // Add excerpt functionality to pages
 add_action( 'init', 'my_add_excerpts_to_pages' );
@@ -74,5 +81,17 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // Enable shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
+
+// Allow SVG through WordPress Media Uploader
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+
+
+
+
 
 ?>
