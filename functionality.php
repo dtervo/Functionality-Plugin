@@ -80,7 +80,10 @@ function tervo_copyright() {
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 */
 // Enable shortcodes in widgets
-add_filter('widget_text', 'do_shortcode');
+add_filter( 'widget_text', array( $wp_embed, 'run_shortcode' ), 8 );
+
+// Enable autoembed functionality in widgets
+add_filter( 'widget_text', array( $wp_embed, 'autoembed'), 8 );
 
 // Allow SVG through WordPress Media Uploader
 function cc_mime_types( $mimes ){
