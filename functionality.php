@@ -15,11 +15,21 @@ Author URI: www.tervosystems.com
 // Edit the structured-data-php file to modify fields
 require_once('structured-data.php');  /*Uncomment this line to add structured data */
 
+// Add Geo Meta Tags to Site
+// Edit the geo-tags.php file to modify fields
+require_once('geo-tags.php');  /*Uncomment this line to add structured data */
+
+// Add Google Authorship to Site
+function tervo_add_google_author() {
+	echo '<link rel="author" href="https://plus.google.com/u/0/105018857658001471650/posts" />';
+	}
+add_action('wp_head', 'tervo_add_google_author'); 
+
 // Add excerpt functionality to pages
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
-}
+	}
 
 //function to call first uploaded image in functions file
 function main_image() {
