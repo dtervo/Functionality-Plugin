@@ -1,5 +1,6 @@
 <?php
 /* Add GEO Meta Tags to Header
+	Generate custom geo tags here: http://geo-tag.de/generator/en.html 
 */
 function tervo_add_meta_tags() {
 	echo '<meta name="meta_name" content="meta_value" />';
