@@ -25,6 +25,9 @@ function tervo_add_google_author() {
 	}
 add_action('wp_head', 'tervo_add_google_author'); 
 
+// Add Piwik Analytics Code to Site
+require_once('piwik-code.php');
+
 // Add excerpt functionality to pages
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
