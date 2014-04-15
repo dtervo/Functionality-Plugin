@@ -7,6 +7,16 @@ License: GPL
 Author: Dan Tervo
 Author URI: www.tervosystems.com
 */
+// Enqueue scripts and styles 
+function tervo_scripts_styles() {
+	//Foundation Icon Fonts
+	wp_enqueue_style( 'foundation-icons', plugin_dir_url( __FILE__ ) . '/icon-fonts/foundation-icons.css', array() );
+	}
+add_action( 'wp_enqueue_scripts', 'tervo_scripts_styles' );
+
+//change default WordPress logo on login page
+	require_once('custom-login.php');
+	
 // Add Cutom Post Type Functionality
 // Edit the custom-post-type.php file to add custom post types
 //require_once('custom-post-type.php');  /*Uncomment this line to add custom post type */
